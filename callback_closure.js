@@ -7,22 +7,20 @@ function logCar(logMsg, callback){
     });
 }
 
-var cars = ["Ferrari","Porshe","Bugatti"];
+var cars = ["Ferrari","Porsche","Bugatti"];
 
-for (var idx in cars){
+for(var idx in cars){
     var message = "Saw a " + cars[idx];
-
     logCar(message,function(){
-        console.log("Normal Callback: "+message);
+        console.log("Normal Callback: " + message);
     });
 }
 
 for(var idx in cars){
     var message = "Saw a " + cars[idx];
-
     (function(msg){
         logCar(msg,function(){
-            console.log("Clousre Callback: "+msg);
+            console.log("Closure Callback: " + msg);
         });
     })(message);
 }
